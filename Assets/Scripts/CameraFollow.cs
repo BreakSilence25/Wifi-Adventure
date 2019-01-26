@@ -16,8 +16,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     private float damping = 2f;
 
-    private float boundMaxY = 0.7f;
-    private float boundMinY = 0.3f;
+    private float boundMaxY = 0.5f;
+    private float boundMinY = 0.5f;
     private float boundMaxX = 0.7f;
     private float boundMinX = 0.3f;
 

@@ -65,7 +65,8 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\Vibration.cs" />
-    <Compile Include="Assets\Scripts\WifiObject.cs" />
+    <Compile Include="Assets\Scripts\WifiBehaviour.cs" />
+    <Compile Include="Assets\Scripts\WifiHandler.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/alexa/Wifi Adventure/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Slider slider;
 
+    private void Start()
+    {
+        Screen.orientation = ScreenOrientation.Portrait;
+    }
+
     public void VibrationStarter()
     {
         Vibration.Vibrate(durationMs);
