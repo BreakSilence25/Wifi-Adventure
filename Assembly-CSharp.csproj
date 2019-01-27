@@ -60,13 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CarBehaviour.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\CharacterBehaviour.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
+    <Compile Include="Assets\Scripts\PanelBehaviour.cs" />
     <Compile Include="Assets\Scripts\Vibration.cs" />
     <Compile Include="Assets\Scripts\WifiBehaviour.cs" />
     <Compile Include="Assets\Scripts\WifiHandler.cs" />
+    <Compile Include="Assets\WinManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/alexa/Wifi Adventure/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

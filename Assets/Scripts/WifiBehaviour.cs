@@ -12,12 +12,18 @@ public class WifiBehaviour : MonoBehaviour
 
     private Transform player;
 
+    private float maxThreshold = 1000f;
+
+    PanelBehaviour mySpot;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         gameObject.name = objectName;
         objectPosition = transform.position;
+
+        mySpot = GameObject.Find(gameObject.name + "(Clone)").GetComponent<PanelBehaviour>();
 
     }
 

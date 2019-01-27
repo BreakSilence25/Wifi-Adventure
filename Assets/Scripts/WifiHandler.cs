@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class WifiHandler : MonoBehaviour
 {
-    [SerializeField]
-    private Sprite[] signalLevels = new Sprite[3];
 
     private GameObject[] wifiObjects = new GameObject[3];
     private GameObject[] closeSignals;
@@ -20,31 +18,27 @@ public class WifiHandler : MonoBehaviour
     [SerializeField]
     private GameObject wifiPanel;
 
-    [System.Serializable]
-    public class HotspotSignal
-    {
-        public string hotspotName;
-        public Vector3 position;
-    }
-
     public List<string> foundSignals;
 
     int index = 0;
 
-    void AddHotspot(string signalName)
+    void AddHotspot(string signalName, Vector3 signalPosition)
     {
-        Debug.Log("sent name is: " + signalName);
-        Instantiate(hotspotUIPrefab, wifiPanel.transform);
-        hotspotUIPrefab.name = signalName;
+        //hotspotUIPrefab.name = signalName;
         hotspotUIPrefab.GetComponentInChildren<Text>().text = signalName;
+        hotspotUIPrefab.name = signalName;
+        hotspotUIPrefab.GetComponent<PanelBehaviour>().wifiObjectPos = signalPosition;
+        Instantiate(hotspotUIPrefab, wifiPanel.transform);
         index++;
     }
 
     void RemoveHotspot(string signalName)
     {
-        if (!foundSignals.Contains(signalName))
+        if (foundSignals.Contains(signalName))
         {
-            
+            Debug.Log("Removing " + signalName.ToString());
+            foundSignals.Remove(signalName);
+            index -= 1;
         }
     }
 
@@ -57,8 +51,6 @@ public class WifiHandler : MonoBehaviour
     {
         wifiObjects = GameObject.FindGameObjectsWithTag("wifi");
 
-
-
         if (index <= wifiObjects.Length)
         {
             {
@@ -69,7 +61,7 @@ public class WifiHandler : MonoBehaviour
                         if (!foundSignals.Contains(wifiObject.GetComponent<WifiBehaviour>().objectName))
                         {
                             Debug.Log(wifiObject.name);
-                            AddHotspot(wifiObject.GetComponent<WifiBehaviour>().objectName);
+                            AddHotspot(wifiObject.GetComponent<WifiBehaviour>().objectName, wifiObject.transform.position);
                             foundSignals.Add(wifiObject.GetComponent<WifiBehaviour>().objectName);
                         }
                     }

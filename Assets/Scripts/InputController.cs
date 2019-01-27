@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class InputController : MonoBehaviour
 {
 
-    public CharacterController characterController;
+    public CharacterBehaviour characterController;
 
     private float v;
     private float h;
